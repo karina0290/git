@@ -1,0 +1,45 @@
+<div class = 'container'>
+<img [src]="logoifrn"
+    alt="logotipoifrn">
+<h1>Turma Info 4V</h1>
+<h2>Disciplinas</h2>
+
+<form class="mt-3">
+    <div>
+        <label class = 'form-label' for="Nome">Nome</label>
+        <input class = 'form-control' type="text" id = "nome" name = "nome" 
+                                                #nm>
+    </div>
+    
+    <div>
+        <label class = 'form-label' for="dc">Docente</label>
+        <input  class = 'form-control'  type="text" id = "dc" name = "dc"
+                                            #dc>
+    </div>
+    <div>
+        <label class = 'form-label' for="ch">Carga horária</label>
+        <input  class = 'form-control'  type="text" id = "ch" name = "ch"
+                                            #ch>
+    </div>
+    <div class = "mt-3 mb-3">
+        <input class="btn btn-primary" type="button" value = "Adicionar"
+                    (click)="adicionar(nm.value,
+                                        dc.value,
+                                        +ch.value)">
+    </div>
+    
+</form>
+
+<table *ngIf="disciplinas.length> 0">
+    <tr>
+        <th>Nome</th>
+        <th>Docente</th>
+        <th>CH</th>
+    </tr>
+    <tr *ngFor="let disc of disciplinas">
+        <td>{{disc.nome}}</td>
+        <td>{{disc.docente}}</td>
+        <td>{{disc.ch}}</td>
+
+    </tr>
+</table>

@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Projeto1';
+  curso : string
+  periodo : number
+  disciplina : string
+  
+  constructor(){
+    this.curso = 'Informática'
+    this.periodo = 4
+    this.disciplina = ''
+  }
 }
